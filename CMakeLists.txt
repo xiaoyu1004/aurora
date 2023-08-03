@@ -6,3 +6,4 @@ set(CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(aurora-as)
 add_subdirectory(aurora-emu)
+add_subdirectory(aurora-cc)
