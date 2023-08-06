@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include<bitset>
 
 int get_reg_idx(std::string reg_name) {
     std::string idx = reg_name.substr(1);
@@ -120,6 +121,8 @@ int main(int argc, const char* argv[]) {
 
         std::cout << std::hex << "0x" << std::setw(8) << std::setfill('0') << instr_bin
                   << std::endl;
+        // std::cout << "0b" << std::setw(32) << std::setfill('0') << static_cast<std::bitset<32>>(instr_bin)
+        //           << std::endl;
     }
 
     fs.close();
