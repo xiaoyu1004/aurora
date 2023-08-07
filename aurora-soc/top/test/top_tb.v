@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-`define SIM_CYCLE 60
+`define SIM_CYCLE 20
 
 module top_tb;
 
@@ -16,7 +16,7 @@ module top_tb;
 
     initial begin
         # (CYCLE * 2) begin
-            $readmemh("./test.dat", u_top.u_cpu.u_d_irom.mem, 0, 4);
+            $readmemh("../top/test/test.dat", u_top.u_cpu.u_d_irom.mem, 0, 4);
         end
 
         # (CYCLE * 4) begin		  

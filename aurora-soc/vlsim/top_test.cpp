@@ -2,7 +2,7 @@
 
 #include <verilated_vcd_c.h>
 
-vtopint64_t sim_time = 0;
+// vtopint64_t sim_time = 0;
 
 int main(int argc, char** argv) {
     Vtop* top = new Vtop;
