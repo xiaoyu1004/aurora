@@ -11,7 +11,7 @@ module top_tb;
 
     initial begin
         # (CYCLE * 2) begin
-            $readmemh("/home/yuhongzhang/workspace/aurora/aurora-soc/top/test/test.dat", u_top.u_cpu.u_d_irom.mem);
+            $readmemh("./test.dat", u_top.u_cpu.u_d_irom.mem);
         end
 
         # (CYCLE * 4) begin		  

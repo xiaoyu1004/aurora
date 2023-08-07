@@ -3,7 +3,7 @@
 
 // pc
 `define RESET_EDGE_ 1'b0
-`DEFINE RESET_PC    32'b0
+`define RESET_PC    32'b0
 
 // irom
 `define ROM_DEPTH   2048

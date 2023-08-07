@@ -8,7 +8,7 @@ module alu(
     // sext
     input   wire [31:0]     sext_out,
 
-    input   wire [4:0]      inst_type,
+    input   wire [2:0]      inst_type,
     input   wire [3:0]      alu_op_type,
     output  reg  [31:0]     alu_out
 );
@@ -45,16 +45,16 @@ module alu(
                 alu_out = $signed(alu_in0) >>> alu_in1;
             end
             `ALU_EQ: begin
-                alu_out = {31{1'b0}, {alu_in0 == alu_in1}};
+                alu_out = {{31{0}}, {alu_in0 == alu_in1}};
             end
             `ALU_NE: begin
-                alu_out = {31{1'b0}, {alu_in0 != alu_in1}};
+                alu_out = {{31{0}}, {alu_in0 != alu_in1}};
             end
             `ALU_LT: begin
-                alu_out = {31{1'b0}, {$signed(alu_in0) <= $signed(alu_in1)}};
+                alu_out = {{31{0}}, {$signed(alu_in0) <= $signed(alu_in1)}};
             end
             `ALU_GE: begin
-                alu_out = {31{1'b0}, {$signed(alu_in0) >= $signed(alu_in1)}};
+                alu_out = {{31{0}}, {$signed(alu_in0) >= $signed(alu_in1)}};
             end
             default: begin
                 alu_out = 32'b0;

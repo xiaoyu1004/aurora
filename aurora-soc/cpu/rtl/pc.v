@@ -12,7 +12,7 @@ module pc(
     input   wire [31:0]     alu_out,
     input   wire            if_br_inst,
     // jal
-    input   wire            if_jal_inst
+    input   wire            if_jal_inst,
     // pc
     output  reg  [31:0]     pc
 );

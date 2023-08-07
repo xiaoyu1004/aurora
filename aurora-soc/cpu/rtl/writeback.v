@@ -3,7 +3,7 @@
 
 module writeback(
     // ctrl
-    input   wire [4:0]      inst_type,
+    input   wire [2:0]      inst_type,
     input   wire            if_load_inst,
     input   wire            flush_pc,
     // alu

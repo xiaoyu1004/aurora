@@ -20,7 +20,7 @@ module cpu(
     wire [31:0]     rf_wr_data;
 
     // sext
-    wire [4:0]      inst_type;
+    wire [2:0]      inst_type;
     wire            if_shift_imm_inst;
     wire [31:0]     sext_out; 
 
