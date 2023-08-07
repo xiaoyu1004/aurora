@@ -15,11 +15,11 @@ module sext(
         end else if (inst_type == `INST_S) begin
             sext_out     = {{20{imm_in[24]}}, imm_in[24:18], imm_in[4:0]};
         end else if (inst_type == `INST_B) begin
-            sext_out     = {{20{imm_in[24]}}, imm_in[24], imm_in[0], imm_in[23], imm_in[18], imm_in[4:1]};
+            sext_out     = {{20{imm_in[24]}}, imm_in[24], imm_in[0], imm_in[23:18], imm_in[4:1]};
         end else if (inst_type == `INST_U) begin
             sext_out     = {{12{imm_in[24]}}, imm_in[24:5]};
         end else if (inst_type == `INST_J) begin
-            sext_out     = {{12{imm_in[24]}}, imm_in[12:5], imm_in[13], imm_in[23:14]};
+            sext_out     = {{12{imm_in[24]}}, imm_in[24], imm_in[12:5], imm_in[13], imm_in[23:14]};
         end else begin
             sext_out     = 32'b0;
         end

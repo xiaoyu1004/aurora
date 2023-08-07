@@ -50,7 +50,7 @@ Token next(char* psrc, char** ppsrc) {
         }
 
         // assign
-        if ()
+        // if ()
     }
 }
 

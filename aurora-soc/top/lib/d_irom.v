@@ -2,7 +2,7 @@
 `include "cpu.vh"
 
 module d_irom(
-    input   wire [11:0]      addr,
+    input   wire [10:0]      addr,
     output  wire [31:0]      inst
 );
 

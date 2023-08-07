@@ -8,6 +8,7 @@ module cpu(
     // pc   
     wire            flush_pc;
     wire            if_jal_inst;
+    wire            if_br_inst;
     wire [31:0]     pc;      
 
     // irom
@@ -42,7 +43,7 @@ module cpu(
         .new_pc(alu_out),
         .flush_pc(flush_pc),
         .sext_out(sext_out),
-        .alu_out(alu_out),
+        .alu_out(alu_out[0]),
         .if_br_inst(if_br_inst),
         .if_jal_inst(if_jal_inst),
         .pc(pc)
@@ -50,7 +51,7 @@ module cpu(
 
     // irom
     d_irom u_d_irom(
-        .addr(pc[13:2]),
+        .addr(pc[12:2]),
         .inst(inst)
     );
 
@@ -88,7 +89,7 @@ module cpu(
     // dram
     d_dram u_d_dram(
         .clk(clk),
-        .rw_addr(alu_out[13:2]),
+        .rw_addr(alu_out[12:2]),
         .wr_en(dram_wr_en),
         .wr_data(rf_rd_data_1),
         .rd_data(dram_rd_data)

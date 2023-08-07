@@ -9,12 +9,12 @@
 `define ROM_DEPTH   2048
 
 // sext
-`define INST_R       5'b000
-`define INST_I       5'b001
-`define INST_S       5'b010
-`define INST_B       5'b011
-`define INST_U       5'b100
-`define INST_J       5'b101
+`define INST_R       3'b000
+`define INST_I       3'b001
+`define INST_S       3'b010
+`define INST_B       3'b011
+`define INST_U       3'b100
+`define INST_J       3'b101
 
 // alu
 // // inst

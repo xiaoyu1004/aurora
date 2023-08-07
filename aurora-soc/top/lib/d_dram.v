@@ -3,7 +3,7 @@
 
 module d_dram(
     input   wire            clk,
-    input   wire [11:0]     rw_addr,
+    input   wire [10:0]     rw_addr,
     input   wire            wr_en,
     input   wire [31:0]     wr_data,
     output  wire [31:0]     rd_data
