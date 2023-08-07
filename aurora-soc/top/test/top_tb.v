@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-`define SIM_CYCLE 20
+`define SIM_CYCLE 60
 
 module top_tb;
 
@@ -9,9 +9,14 @@ module top_tb;
     reg clk     = 1'b0;
     reg rst_n   = 1'b0;
 
+    initial begin            
+        $dumpfile("top_tb.vcd");        
+        $dumpvars(0, top_tb);    
+    end
+
     initial begin
         # (CYCLE * 2) begin
-            $readmemh("./test.dat", u_top.u_cpu.u_d_irom.mem);
+            $readmemh("./test.dat", u_top.u_cpu.u_d_irom.mem, 0, 4);
         end
 
         # (CYCLE * 4) begin		  

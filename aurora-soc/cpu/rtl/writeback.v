@@ -9,7 +9,7 @@ module writeback(
     // alu
     input   wire [31:0]     alu_out,
     // dram
-    input   reg  [31:0]     dram_rd_data,
+    input   wire [31:0]     dram_rd_data,
     // pc
     input   wire [31:0]     pc,
 

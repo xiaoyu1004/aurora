@@ -6,7 +6,7 @@ module d_irom(
     output  wire [31:0]      inst
 );
 
-    reg [31:0] mem [`ROM_DEPTH-1 : 0]
+    reg [31:0] mem [`ROM_DEPTH-1 : 0];
 
     assign inst = mem[addr];
 

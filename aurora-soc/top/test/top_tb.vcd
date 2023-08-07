@@ -1,0 +1,166 @@
+$date
+	Mon Aug 07 12:48:48 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module top_tb $end
+$var parameter 32 ! CYCLE $end
+$var reg 1 " clk $end
+$var reg 1 # rst_n $end
+$scope module u_top $end
+$var wire 1 " clk $end
+$var wire 1 # rst_n $end
+$scope module u_cpu $end
+$var wire 1 " clk $end
+$var wire 1 # rst_n $end
+$var wire 32 $ sext_out [31:0] $end
+$var wire 32 % rf_wr_data [31:0] $end
+$var wire 1 & rf_we $end
+$var wire 32 ' rf_rd_data_1 [31:0] $end
+$var wire 32 ( rf_rd_data_0 [31:0] $end
+$var wire 32 ) pc [31:0] $end
+$var wire 3 * inst_type [2:0] $end
+$var wire 32 + inst [31:0] $end
+$var wire 1 , if_shift_imm_inst $end
+$var wire 1 - if_load_inst $end
+$var wire 1 . if_jal_inst $end
+$var wire 1 / if_br_inst $end
+$var wire 1 0 flush_pc $end
+$var wire 1 1 dram_wr_en $end
+$var wire 32 2 dram_rd_data [31:0] $end
+$var wire 32 3 alu_out [31:0] $end
+$var wire 4 4 alu_op_type [3:0] $end
+$scope module u_alu $end
+$var wire 32 5 sext_out [31:0] $end
+$var wire 32 6 rd_data_1 [31:0] $end
+$var wire 32 7 rd_data_0 [31:0] $end
+$var wire 3 8 inst_type [2:0] $end
+$var wire 4 9 alu_op_type [3:0] $end
+$var wire 32 : alu_in1 [31:0] $end
+$var wire 32 ; alu_in0 [31:0] $end
+$var reg 32 < alu_out [31:0] $end
+$upscope $end
+$scope module u_ctrl $end
+$var wire 1 1 dram_wr_en $end
+$var wire 1 0 flush_pc $end
+$var wire 1 . if_jal_inst $end
+$var wire 1 - if_load_inst $end
+$var wire 1 , if_shift_imm_inst $end
+$var wire 1 = inst_add $end
+$var wire 1 > inst_addi $end
+$var wire 1 ? inst_and $end
+$var wire 1 @ inst_andi $end
+$var wire 1 A inst_beq $end
+$var wire 1 B inst_bge $end
+$var wire 1 C inst_blt $end
+$var wire 1 D inst_bne $end
+$var wire 1 E inst_jalr $end
+$var wire 1 F inst_lw $end
+$var wire 1 G inst_or $end
+$var wire 1 H inst_ori $end
+$var wire 1 I inst_sll $end
+$var wire 1 J inst_slli $end
+$var wire 1 K inst_sra $end
+$var wire 1 L inst_srai $end
+$var wire 1 M inst_srl $end
+$var wire 1 N inst_srli $end
+$var wire 1 O inst_sub $end
+$var wire 1 P inst_sw $end
+$var wire 1 Q inst_xor $end
+$var wire 1 R inst_xori $end
+$var wire 1 & rf_we $end
+$var wire 7 S opcode [6:0] $end
+$var wire 1 T inst_lui $end
+$var wire 1 U inst_jal $end
+$var wire 32 V inst [31:0] $end
+$var wire 1 / if_br_inst $end
+$var wire 7 W funct7 [6:0] $end
+$var wire 3 X funct3 [2:0] $end
+$var reg 4 Y alu_op_type [3:0] $end
+$var reg 3 Z inst_type [2:0] $end
+$upscope $end
+$scope module u_d_dram $end
+$var wire 1 " clk $end
+$var wire 32 [ rd_data [31:0] $end
+$var wire 12 \ rw_addr [11:0] $end
+$var wire 1 1 wr_en $end
+$var wire 32 ] wr_data [31:0] $end
+$upscope $end
+$scope module u_d_irom $end
+$var wire 12 ^ addr [11:0] $end
+$var wire 32 _ inst [31:0] $end
+$upscope $end
+$scope module u_pc $end
+$var wire 32 ` alu_out [31:0] $end
+$var wire 1 " clk $end
+$var wire 1 0 flush_pc $end
+$var wire 1 / if_br_inst $end
+$var wire 1 . if_jal_inst $end
+$var wire 32 a new_pc [31:0] $end
+$var wire 1 # rst_n $end
+$var wire 32 b sext_out [31:0] $end
+$var wire 32 c offset [31:0] $end
+$var wire 1 d br_taken $end
+$var reg 32 e pc [31:0] $end
+$upscope $end
+$scope module u_regfile $end
+$var wire 1 " clk $end
+$var wire 5 f rd_addr_0 [4:0] $end
+$var wire 5 g rd_addr_1 [4:0] $end
+$var wire 1 # rst_n $end
+$var wire 1 & we $end
+$var wire 5 h wr_addr [4:0] $end
+$var wire 32 i wr_data [31:0] $end
+$var wire 32 j rd_data_1 [31:0] $end
+$var wire 32 k rd_data_0 [31:0] $end
+$var integer 32 l i [31:0] $end
+$upscope $end
+$scope module u_sext $end
+$var wire 1 , if_shift_imm_inst $end
+$var wire 25 m imm_in [24:0] $end
+$var wire 3 n inst_type [2:0] $end
+$var reg 32 o sext_out [31:0] $end
+$upscope $end
+$scope module u_writeback $end
+$var wire 32 p alu_out [31:0] $end
+$var wire 32 q dram_rd_data [31:0] $end
+$var wire 1 0 flush_pc $end
+$var wire 1 - if_load_inst $end
+$var wire 3 r inst_type [2:0] $end
+$var wire 32 s pc [31:0] $end
+$var reg 32 t rf_wr_data [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b10100 !
+$end
+#0
+$dumpvars
+bx t
+b0 s
+bx r
+bx q
+bx p
+bx o
+bx n
+bx m
+b100000 l
+bx k
+bx j
+bx i
+bx h
+bx g
+bx f
+b0 e
+xd
+bx c
+bx b
+b

@@ -10,8 +10,8 @@ module ctrl(
     // regfile
     output   wire           rf_we,
     // sext
-    output   wire [2:0]     inst_type,
-    output                  if_shift_imm_inst,
+    output   reg [2:0]      inst_type,
+    output   wire           if_shift_imm_inst,
     // alu
     output   reg [3:0]      alu_op_type,
     // dram
@@ -69,7 +69,7 @@ module ctrl(
     assign if_jal_inst = inst_jal;
 
     // rf_we
-    assign rf_we = (inst_type != `INST_S) & (inst_type != INST_B);
+    assign rf_we = (inst_type != `INST_S) & (inst_type != `INST_B);
 
     // inst_type
     always @(*) begin
@@ -95,7 +95,7 @@ module ctrl(
 
     // alu_op_type
     always @(*) begin
-        if (inst_add | inst_addi | inst_lw | inst_jalr | inst_sw) begin
+        if (inst_add || inst_addi || inst_lw || inst_jalr || inst_sw) begin
             alu_op_type     = `ALU_ADD;
         end else if (inst_sub) begin
             alu_op_type     = `ALU_SUB;

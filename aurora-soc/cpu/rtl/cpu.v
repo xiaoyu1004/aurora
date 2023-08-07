@@ -105,4 +105,18 @@ module cpu(
         .rf_wr_data(rf_wr_data)
     );
 
+    // ctrl
+    ctrl u_ctrl(
+        .inst(inst),
+        .flush_pc(flush_pc),
+        .if_br_inst(if_br_inst),
+        .if_jal_inst(if_jal_inst),
+        .rf_we(rf_we),
+        .inst_type(inst_type),
+        .if_shift_imm_inst(if_shift_imm_inst),
+        .alu_op_type(alu_op_type),
+        .dram_wr_en(dram_wr_en),
+        .if_load_inst(if_load_inst)
+    );
+
 endmodule
