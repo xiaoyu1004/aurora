@@ -23,12 +23,10 @@ module pc(
     always @(posedge clk or negedge rst_n) begin
         if (rst_n == `RESET_EDGE_) begin
             pc      <= `RESET_PC;
+        end else if (flush_pc) begin
+            pc      <= new_pc;
         end else begin
-            if (flush_pc) begin
-                pc  <= new_pc;
-            end else begin
-                pc  <= pc + offset;
-            end
+            pc      <= pc + offset;
         end
     end
 
