@@ -1,13 +1,13 @@
 # .text
 # .global _start
 # _start:
-xor a0, a0, a0
-addi a0, a0, 6
+xor x10, x10, x10
+addi x10, x10, 6
 
-xor a1, a1, a1
-addi a1, a1, 2
+xor x11, x11, x11
+addi x11, x11, 2
 
-add a0, a0, a1
+add x10, x10, x11
 
 # exit:
 #     # Setup the parameters to exit the program and then call Linux to do it.
